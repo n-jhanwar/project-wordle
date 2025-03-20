@@ -10,14 +10,8 @@ function Cell({ letter, status }) {
   return <span className={className}>{letter}</span>
 }
 
-function Guess({ word, answer }) {
-  let numberOfLetters = 5;
-  let letterStatuses = [];
-
-  if (word) {
-    letterStatuses = checkGuess(word, answer);
-    numberOfLetters = word.length;
-  }
+function Guess({ value }) {
+  const numberOfLetters = value?.length || 5;
 
   return (
     <p className="guess">
@@ -25,8 +19,8 @@ function Guess({ word, answer }) {
         range(numberOfLetters).map((index) => (
           <Cell
             key={index}
-            letter={letterStatuses.length > 0 && letterStatuses[index].letter}
-            status={letterStatuses.length > 0 && letterStatuses[index].status}
+            letter={value?.length > 0 && value[index].letter}
+            status={value?.length > 0 && value[index].status}
           />
         ))
       }

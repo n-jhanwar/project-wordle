@@ -198,6 +198,56 @@ h1 {
 }
 
 /*
+  keyboard styles
+*/
+.keyboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
+
+.keyboard-cell {
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-content: center;
+  border: 2px solid var(--color-gray-700);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 400;
+  background: var(--color-gray-700);
+}
+
+.keyboard-cell.correct {
+  background: var(--color-success);
+  color: white;
+}
+
+.keyboard-cell.incorrect {
+  background: var(--color-gray-300);
+  color: white;
+}
+
+.keyboard-cell.misplaced {
+  background: var(--color-warning);
+  color: white;
+}
+
+/*
+  button styles
+*/
+.button {
+  text-align: center;
+  margin: 2px;
+  font-weight: 700;
+}
+/*
   Modal styles
 
   HACK: I'm doing this in a quick and dirty way.
