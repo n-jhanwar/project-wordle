@@ -15,7 +15,7 @@ const STATUS_RANKS = {
 function Keyboard({ validatedGuesses }) {
   const getStatusByLetter = () => {
     const statusObject = {};
-    allLetters = validatedGuesses.flat();
+    const allLetters = validatedGuesses.flat();
 
     allLetters.forEach(({ letter, status }) => {
       const currentStatus = statusObject[letter];
